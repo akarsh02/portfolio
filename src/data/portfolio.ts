@@ -12,8 +12,9 @@ export interface PortfolioData {
   header: {
     tagline: string;
     title: string;
-    about: string;
+    focus: string;
   };
+  about: string;
   skills: {
     frontend: string[];
     backend: string[];
@@ -34,8 +35,9 @@ export const portfolioData: PortfolioData = {
   header: {
     tagline: "Learn • Build • Repeat 🚀",
     title: "Web Developer & Mobile Developer",
-    about: "I am a passionate developer with deep expertise in web and mobile technologies, transitioning seamlessly between traditional Web2 architecture and modern Web3 dApps. With a strong track record of optimizing performance and integrating complex smart contracts, I bring ideas to life with high quality and scalability."
+    focus: "Web2 & Web3"
   },
+  about: "I am a passionate developer with deep expertise in web and mobile technologies, transitioning seamlessly between traditional Web2 architecture and modern Web3 dApps. With a strong track record of optimizing performance and integrating complex smart contracts, I bring ideas to life with high quality and scalability.",
   skills: {
     frontend: ["React.js", "Next.js", "TypeScript", "JavaScript (ES6+)", "Tailwind CSS", "Framer Motion", "React Native", "Expo", "Gluestack"],
     backend: ["Node.js", "PHP 8.4", "Symfony 7.3", "Doctrine ORM 3.4", "REST API Design", "GraphQL", "JWT / OAuth2", "Auth0"],
