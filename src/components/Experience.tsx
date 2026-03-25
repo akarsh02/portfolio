@@ -39,7 +39,7 @@ export default function Experience() {
             {/* Timeline dot */}
             <div className="absolute -left-[41px] md:-left-[57px] top-1.5 w-5 h-5 rounded-full bg-blue-500 border-4 border-black" />
             
-            <div className="glass p-6 md:p-8 rounded-2xl hover:glass-glow transition-all duration-300 group">
+            <div className="glass p-6 md:p-8 rounded-2xl hover:glass-glow transition-all duration-300 group bg-gray-900/80 backdrop-blur-2xl border-gray-700/50">
               <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
                 <div>
                   <h3 className="text-2xl font-semibold text-white group-hover:text-blue-300 transition-colors">{exp.role}</h3>

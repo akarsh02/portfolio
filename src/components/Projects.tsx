@@ -52,38 +52,46 @@ export default function Projects() {
             key={index}
             variants={itemVariants}
             whileHover={{ scale: 1.04, y: -12, transition: { type: "spring", stiffness: 350, damping: 15 } }}
-            className="group glass p-6 rounded-2xl flex flex-col h-full hover:glass-glow transition-all duration-300 relative overflow-hidden"
+            className="group glass rounded-2xl flex flex-col h-full hover:glass-glow transition-all duration-300 relative overflow-hidden bg-gray-900/80 backdrop-blur-2xl border-gray-700/50"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
             
-            <div className="flex justify-between items-start mb-4 z-10">
-              <div className="p-3 bg-gray-900/60 rounded-xl text-teal-400 border border-teal-900/30">
-                <FaGithub size={24} />
-              </div>
-              <a 
-                href={project.githubUrl} 
-                target="_blank" 
-                rel="noreferrer"
-                className="text-gray-500 hover:text-teal-400 transition-colors p-2"
-              >
-                <ExternalLink size={20} />
-              </a>
+            {/* Project Image Placeholder / Abstract Gradient Cover */}
+            <div className="h-32 w-full bg-gradient-to-br from-gray-800 to-black relative overflow-hidden flex items-center justify-center opacity-70 group-hover:opacity-100 transition-opacity z-10 border-b border-gray-800/80">
+               <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjMTExIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wLDBMODwyIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMSI+PC9wYXRoPgo8L3N2Zz4=')] opacity-20 mix-blend-overlay" />
+               <FaGithub size={48} className="text-gray-700 group-hover:text-teal-500/30 transition-all duration-700 transform group-hover:scale-125 group-hover:rotate-12" />
             </div>
-            
-            <h3 className="text-xl font-bold text-white mb-3 z-10 group-hover:text-teal-300 transition-colors">
-              {project.title}
-            </h3>
-            
-            <p className="text-gray-400 text-sm mb-6 flex-grow z-10 leading-relaxed">
-              {project.description}
-            </p>
-            
-            <div className="flex flex-wrap gap-2 mt-auto z-10">
-              {project.tags.map((tag, i) => (
-                <span key={i} className="text-xs font-mono text-teal-200/70 bg-teal-900/20 px-2.5 py-1 rounded-md border border-teal-800/30">
-                  {tag}
-                </span>
-              ))}
+
+            <div className="p-6 flex flex-col flex-grow z-10">
+              <div className="flex justify-between items-start mb-4">
+                <div className="p-3 bg-black/60 rounded-xl text-teal-400 border border-teal-900/30">
+                  <FaGithub size={24} />
+                </div>
+                <a 
+                  href={project.githubUrl} 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="text-gray-500 hover:text-teal-400 transition-colors p-2"
+                >
+                  <ExternalLink size={20} />
+                </a>
+              </div>
+              
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-teal-300 transition-colors">
+                {project.title}
+              </h3>
+              
+              <p className="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">
+                {project.description}
+              </p>
+              
+              <div className="flex flex-wrap gap-2 mt-auto">
+                {project.tags.map((tag, i) => (
+                  <span key={i} className="text-xs font-mono text-teal-200/70 bg-teal-900/20 px-2.5 py-1 rounded-md border border-teal-800/30">
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </motion.div>
         ))}

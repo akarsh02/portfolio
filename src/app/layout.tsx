@@ -32,14 +32,14 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col relative bg-black text-gray-100 overflow-x-hidden selection:bg-teal-500/30 selection:text-white">
         <CustomCursor />
         <ParticleBackground />
-        
+
         {/* Animated Background Orbs */}
         <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
           <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-blue-600/20 blur-[100px] mix-blend-screen animate-blob" />
           <div className="absolute top-[20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-violet-600/20 blur-[100px] mix-blend-screen animate-blob" style={{ animationDelay: "2s" }} />
           <div className="absolute bottom-[-20%] left-[20%] w-[50%] h-[50%] rounded-full bg-teal-600/20 blur-[100px] mix-blend-screen animate-blob" style={{ animationDelay: "4s" }} />
         </div>
-        
+
         {children}
       </body>
     </html>

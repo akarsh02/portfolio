@@ -111,13 +111,37 @@ export default function Hero() {
           web applications that bridge the gap between intuitive design and complex Web3 logic.
         </motion.p>
         
-        <motion.div variants={itemVariants} style={{ transform: "translateZ(80px)" }} className="flex items-center space-x-4 pt-4">
-          <a href="mailto:akarsh226@gmail.com" className="inline-block px-8 py-4 rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-            Hire Me
-          </a>
-          <a href="#experience" className="inline-block px-8 py-4 rounded-full border border-gray-700 bg-gray-900/50 hover:bg-gray-800 text-white font-medium transition-colors backdrop-blur-sm">
+        <motion.div variants={itemVariants} style={{ transform: "translateZ(80px)" }} className="flex items-center space-x-4 pt-4 z-50 relative pointer-events-auto">
+          <motion.div
+            animate={{ scale: [1, 1.05, 1], rotate: [0, -1, 1, 0] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+            className="inline-block"
+          >
+            <motion.a 
+              href="mailto:akarsh226@gmail.com" 
+              whileHover={{ scale: 1.08, transition: { type: "spring", stiffness: 400, damping: 10 } }}
+              whileTap={{ scale: 0.95 }}
+              animate={{ 
+                boxShadow: [
+                  "0px 0px 20px rgba(45,212,191,0.4)",
+                  "0px 0px 45px rgba(45,212,191,0.8)",
+                  "0px 0px 20px rgba(45,212,191,0.4)"
+                ]
+              }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="inline-block px-8 py-4 rounded-full border border-teal-300 bg-gradient-to-r from-teal-400 to-blue-500 text-white font-extrabold transition-all"
+            >
+              Hire Me
+            </motion.a>
+          </motion.div>
+          <motion.a 
+            href="#experience" 
+            whileHover={{ scale: 1.05, transition: { type: "spring", stiffness: 400, damping: 10 } }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block px-8 py-4 rounded-full border border-gray-600 bg-gray-900/80 hover:bg-gray-800 text-white font-medium transition-all backdrop-blur-sm shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:shadow-[0_0_25px_rgba(255,255,255,0.1)]"
+          >
             View Work
-          </a>
+          </motion.a>
         </motion.div>
 
         <motion.div variants={itemVariants} className="flex space-x-6 pt-8 text-gray-400 z-50 relative pointer-events-auto">
